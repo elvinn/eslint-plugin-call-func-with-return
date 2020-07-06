@@ -1,17 +1,24 @@
 # call specified functions with return statement (call-func-with-return)
 
-Please describe the origin of the rule here.
+Call specified functions with return statement.
 
 
 ## Rule Details
 
-This rule aims to...
-
 Examples of **incorrect** code for this rule:
 
 ```js
+function jsonRet(data = {}, retCode, retMessage) {
+    return {
+        data,
+        retCode,
+        retMessage,
+    }
+}
 
-// fill me in
+function main() {
+    jsonRet({ author: 'elvinn' }); // error
+}
 
 ```
 
@@ -19,18 +26,20 @@ Examples of **correct** code for this rule:
 
 ```js
 
-// fill me in
+function jsonRet(data = {}, retCode, retMessage) {
+    return {
+        data,
+        retCode,
+        retMessage,
+    }
+}
+
+function main() {
+    return jsonRet({ author: 'elvin' }); // ok
+}
 
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
-
-## When Not To Use It
-
-Give a short description of when it would be appropriate to turn off this rule.
-
-## Further Reading
-
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+1. string[]: function name list, like: `['jsonRet', 'xmlRet']`
