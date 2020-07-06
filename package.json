@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-call-func-with-return",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "call specified functions with return statement",
   "keywords": [
     "eslint",
@@ -21,6 +21,10 @@
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elvinn/eslint-plugin-call-func-with-return.git"
   },
   "license": "MIT"
 }
