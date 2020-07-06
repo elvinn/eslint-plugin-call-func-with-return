@@ -4,6 +4,21 @@
 
 Call specified functions with return statement.
 
+``` js
+function jsonRet(data = {}, retCode, retMessage) {
+    return {
+        data,
+        retCode,
+        retMessage,
+    }
+}
+
+function main() {
+    jsonRet({ author: 'elvinn' }); // error
+    return jsonRet({ author: 'elvin' }); // ok
+}
+```
+
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org):

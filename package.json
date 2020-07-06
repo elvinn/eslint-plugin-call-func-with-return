@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-call-func-with-return",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "call specified functions with return statement",
   "keywords": [
     "eslint",

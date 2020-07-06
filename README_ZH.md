@@ -2,6 +2,21 @@
 
 调用指定的函数时，必须使用 `return` 语句。
 
+``` js
+function jsonRet(data = {}, retCode, retMessage) {
+    return {
+        data,
+        retCode,
+        retMessage,
+    }
+}
+
+function main() {
+    jsonRet({ author: 'elvinn' }); // 错误
+    return jsonRet({ author: 'elvin' }); // 正确
+}
+```
+
 ## 安装
 
 首先，需要安装 [ESLint](http://eslint.org):
