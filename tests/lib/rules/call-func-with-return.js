@@ -36,7 +36,15 @@ ruleTester.run('call-func-with-return', rule, {
         {
             code: 'function foo() { return xmlRet() }',
             options: [['jsonRet', 'xmlRet']]
-        }
+        },
+        {
+            code: 'function foo() { return ctx.success() }',
+            options: [['ctx.success']]
+        },
+        {
+            code: 'function foo() { return ctx.fail() }',
+            options: [['ctx.success']]
+        },
     ],
 
     invalid: [
@@ -55,6 +63,14 @@ ruleTester.run('call-func-with-return', rule, {
             errors: [{
                 message: 'xmlRet should be called with return',
             }]
-        }
+        },
+        {
+            code: 'function foo() { ctx.success() }',
+            output: 'function foo() { return ctx.success() }',
+            options: [['ctx.success']],
+            errors: [{
+                message: 'ctx.success should be called with return',
+            }]
+        },
     ]
 });
